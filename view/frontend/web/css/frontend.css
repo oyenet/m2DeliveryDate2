@@ -1,0 +1,3 @@
+#checkout-step-shipping_method input[name="delivery_date"]{
+    max-width: 500px;
+}

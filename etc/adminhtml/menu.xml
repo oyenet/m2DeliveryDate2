@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Oye_Deliverydate::main" title="Delivery Date" module="Oye_Deliverydate" sortOrder="51" resource="Oye_Deliverydate::main"/>
+        <add id="Oye_Deliverydate::holidays" title="Holiday Grid" module="Oye_Deliverydate" sortOrder="1" parent="Oye_Deliverydate::main" action="oyedeliverydate/holiday/" resource="Oye_Deliverydate::holidays"/>
+    </menu>
+</config>
