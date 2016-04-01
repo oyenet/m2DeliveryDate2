@@ -20,7 +20,7 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/igorw/monolog"
+      "url": "https://github.com/oyenet/m2DeliveryDate2.git"
     }
   ]
 }
