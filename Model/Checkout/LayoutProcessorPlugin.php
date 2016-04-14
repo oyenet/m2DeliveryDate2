@@ -42,10 +42,10 @@ class LayoutProcessorPlugin
                     'options' => [],
                 ],
                 'dataScope' => 'shippingAddress.delivery_date',
-                'label' => __('Delivery Date'),
+                'label' => __($this->_helper->getConfigFieldLabel()),
                 'provider' => 'checkoutProvider',
                 'visible' => true,
-                'validation' => [],//['required-entry' => true],
+                'validation' => false, //['required-entry' => $this->_helper->getConfigIsFieldRequired()],
                 'sortOrder' => 200,
             ];
         }
@@ -65,10 +65,10 @@ class LayoutProcessorPlugin
                             'options' => [],
                         ],
                         'dataScope' => 'shippingAddress.delivery_date',
-                        'label' => __('Delivery Date'),
+                        'label' => __($this->_helper->getConfigFieldLabel()),
                         'provider' => 'checkoutProvider',
                         'visible' => true,
-                        'validation' => [],//['required-entry' => true],
+                        'validation' => false, //['required-entry' => $this->_helper->getConfigIsFieldRequired()],
                         'sortOrder' => 200,
                     ]
                 ],

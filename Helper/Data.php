@@ -10,20 +10,23 @@ namespace Oye\Deliverydate\Helper;
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
 
-    const CONFIG_PATH_MIN_DELAY = 'delivery_date/general/min_delay';
+    const CONFIG_PATH_MIN_DELAY         = 'delivery_date/general/min_delay';
+    const CONFIG_PATH_MAX_DELAY         = 'delivery_date/general/max_delay';
+    const CONFIG_PATH_EXCLUDE_WEEKDAYS  = 'delivery_date/general/exclude_weekdays';
+    const CONFIG_PATH_SAMEDAY_TIME      = 'delivery_date/general/disable_after_same_day_time';
+    const CONFIG_PATH_DATE_FORMAT       = 'delivery_date/general/date_format';
+    const CONFIG_PATH_DISPLAY_AREA      = 'delivery_date/general/display_area';
+    const CONFIG_PATH_FIELD_LABEL       = 'delivery_date/general/field_label';
+    const CONFIG_PATH_FIELD_REQUIRED    = 'delivery_date/general/required';
 
-    const CONFIG_PATH_MAX_DELAY = 'delivery_date/general/max_delay';
-
-    const CONFIG_PATH_EXCLUDE_WEEKDAYS = 'delivery_date/general/exclude_weekdays';
-
-    const CONFIG_PATH_SAMEDAY_TIME = 'delivery_date/general/disable_after_same_day_time';
-
-    const CONFIG_PATH_DATE_FORMAT = 'delivery_date/general/date_format';
-
-    const CONFIG_PATH_DISPLAY_AREA = 'delivery_date/general/display_area';
-
+    /**
+     * @var \Magento\Framework\Stdlib\DateTime\TimezoneInterface
+     */
     public $timeZone;
 
+    /**
+     * @var \Magento\Store\Model\StoreManagerInterface
+     */
     public $storeManager;
 
     /**
@@ -133,5 +136,22 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     {
         return $this->scopeConfig->getValue(self::CONFIG_PATH_DISPLAY_AREA, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
     }
+
+    /**
+     * @return string
+     */
+    public function getConfigFieldLabel()
+    {
+        return $this->scopeConfig->getValue(self::CONFIG_PATH_FIELD_LABEL, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getConfigIsFieldRequired()
+    {
+        return $this->scopeConfig->getValue(self::CONFIG_PATH_FIELD_REQUIRED, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+    }
+
 
 }

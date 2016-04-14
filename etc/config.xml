@@ -4,6 +4,7 @@
         <delivery_date>
             <general>
                 <display_area>0</display_area>
+                <field_label>Delivery Date</field_label>
                 <min_delay>0</min_delay>
                 <max_delay>60</max_delay>
                 <disable_after_same_day_time><![CDATA[13:00]]></disable_after_same_day_time>

@@ -17,6 +17,9 @@
             <resource>Oye_Deliverydate::config</resource>
             <group id="general" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>General</label>
+                <field id="field_label" translate="label" type="text" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Delivery date field label</label>
+                </field>
                 <field id="exclude_weekdays" translate="label" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Exclude days of week from delivery</label>
                     <source_model>Magento\Config\Model\Config\Source\Locale\Weekdays</source_model>
@@ -70,10 +73,14 @@
                     <label>Area to display delivery date field</label>
                     <source_model>Oye\Deliverydate\Model\System\Config\Source\Area</source_model>
                 </field>
+
+                <!-- to-do need custom validation for shipping method form-->
+<!--
                 <field id="required" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Make Delivery Date a required field</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
+-->
 
             </group>
         </section>
