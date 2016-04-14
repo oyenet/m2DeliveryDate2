@@ -21,14 +21,13 @@ class UpgradeSchema implements UpgradeSchemaInterface
      */
     public function upgrade(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
-        $installer = $setup;
-        $installer->startSetup();
+        $setup->startSetup();
 
-        if (version_compare($context->getVersion(), '1.0.0', '>')) {
+        if (version_compare($context->getVersion(), '1.3.0') < 0) {
             $this->addHolidayTable($setup);
         }
-
-        $installer->endSetup();
+        
+        $setup->endSetup();
     }
 
     /**
@@ -40,6 +39,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
         /**
          * Create table 'oye_deliverydate_holiday'
          */
+
         $table = $setup->getConnection()
             ->newTable($setup->getTable('oye_deliverydate_holiday'))
             ->addColumn(
@@ -72,4 +72,5 @@ class UpgradeSchema implements UpgradeSchemaInterface
             );
         $setup->getConnection()->createTable($table);
     }
+
 }

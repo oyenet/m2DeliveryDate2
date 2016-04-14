@@ -18,11 +18,10 @@ class InstallSchema implements InstallSchemaInterface
      */
     public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
-        $installer = $setup;
-        $installer->startSetup();
+        $setup->startSetup();
 
-        $installer->getConnection()->addColumn(
-            $installer->getTable('quote'),
+        $setup->getConnection()->addColumn(
+            $setup->getTable('quote'),
             'delivery_date',
             [
                 'type' => 'datetime',
@@ -31,8 +30,8 @@ class InstallSchema implements InstallSchemaInterface
             ]
         );
 
-        $installer->getConnection()->addColumn(
-            $installer->getTable('sales_order'),
+        $setup->getConnection()->addColumn(
+            $setup->getTable('sales_order'),
             'delivery_date',
             [
                 'type' => 'datetime',
@@ -41,8 +40,8 @@ class InstallSchema implements InstallSchemaInterface
             ]
         );
 
-        $installer->getConnection()->addColumn(
-            $installer->getTable('sales_order_grid'),
+        $setup->getConnection()->addColumn(
+            $setup->getTable('sales_order_grid'),
             'delivery_date',
             [
                 'type' => 'datetime',
